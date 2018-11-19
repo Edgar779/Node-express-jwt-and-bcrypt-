@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
-mongoose.connect('mongodb://Edgar779:cherqezyan.edgar123456@ds261521.mlab.com:61521/user', { useNewUrlParser: true });
+const config = require('../config/config');
+mongoose.connect(config.db_url, { useNewUrlParser: true });
 
 const user = new mongoose.Schema({
     name: {type: String, unique: true},
